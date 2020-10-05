@@ -3,19 +3,13 @@ const bigBlindOrRaise = require("./src/strategies/bigBlindOrRaise");
 
 class Player {
   static get VERSION() {
-    return "0.1";
+    return "0.2";
   }
 
   static betRequest(gameState, bet) {
     var game = new GameState(gameState);
 
-    if (true) {
-      bet(game.bigBlind());
-      return;
-    }
-
     bet(bigBlindOrRaise(game));
-    return;
   }
 
   static showdown(gameState) {}
