@@ -1,18 +1,24 @@
-const GameState = require('./src/GameState');
+const GameState = require("./src/GameState");
+const calculateBet = require("./src/calculateBet");
 
 class Player {
   static get VERSION() {
-    return '0.1';
+    return "0.1";
   }
 
   static betRequest(gameState, bet) {
     var game = new GameState(gameState);
-    bet(game.bigBlind());
+
+    if (true) {
+      bet(game.bigBlind());
+      return;
+    }
+
+    bet(calculateBet(game));
+    return;
   }
 
-  static showdown(gameState) {
-  }
+  static showdown(gameState) {}
 }
 
 module.exports = Player;
-
