@@ -1,5 +1,5 @@
 const GameState = require("./src/GameState");
-const callOrRaise = require("./src/strategies/callOrRaise");
+const { callOrRaise } = require("./src/strategies/callOrRaise");
 
 class Player {
   static get VERSION() {
@@ -10,7 +10,6 @@ class Player {
     var game = new GameState(gameState);
 
     bet(callOrRaise(game));
-    return;
   }
 
   static showdown(gameState) {}

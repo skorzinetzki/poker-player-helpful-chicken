@@ -6,4 +6,4 @@ function shouldBet(gameState) {
   return gameState.me().hasPocketPair();
 }
 
-module.exports = { bigBlindOrRaise: callOrRaise };
+module.exports = { callOrRaise };
