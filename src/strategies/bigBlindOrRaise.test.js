@@ -16,7 +16,7 @@ function createGameStateWithCard(holeCards) {
 }
 
 describe("bigBlindOrRaise", () => {
-  it("calls if we have low cards", () => {
+  it("folds if we have low cards", () => {
     const holeCards = [
       {
         rank: "6",
@@ -28,7 +28,7 @@ describe("bigBlindOrRaise", () => {
       },
     ];
     const gameState = createGameStateWithCard(holeCards);
-    expect(bigBlindOrRaise(gameState)).toBe(gameState.toCall());
+    expect(bigBlindOrRaise(gameState)).toBe(0);
   });
 
   it("bets 500 if we have a pair", () => {
