@@ -1,6 +1,6 @@
-const defaultGameState = require("./defaultGameState");
-const GameState = require("./GameState");
-const calculateBet = require("./calculateBet");
+const defaultGameState = require("../defaultGameState");
+const GameState = require("../GameState");
+const { bigBlindOrRaise } = require("./bigBlindOrRaise");
 
 function createGameStateWithCard(holeCards) {
   return new GameState({
@@ -15,7 +15,7 @@ function createGameStateWithCard(holeCards) {
   });
 }
 
-describe("calculateBet", () => {
+describe("bigBlindOrRaise", () => {
   it("bets the big blind if we don't have a pair", () => {
     const holeCards = [
       {
@@ -28,7 +28,7 @@ describe("calculateBet", () => {
       },
     ];
     const gameState = createGameStateWithCard(holeCards);
-    expect(calculateBet(gameState)).toBe(gameState.bigBlind());
+    expect(bigBlindOrRaise(gameState)).toBe(gameState.bigBlind());
   });
 
   it("bets 500 if we have a pair", () => {
@@ -43,6 +43,6 @@ describe("calculateBet", () => {
       },
     ];
     const gameState = createGameStateWithCard(holeCards);
-    expect(calculateBet(gameState)).toBe(500);
+    expect(bigBlindOrRaise(gameState)).toBe(500);
   });
 });

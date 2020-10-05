@@ -1,5 +1,5 @@
 const GameState = require("./src/GameState");
-const calculateBet = require("./src/calculateBet");
+const bigBlindOrRaise = require("./src/strategies/bigBlindOrRaise");
 
 class Player {
   static get VERSION() {
@@ -14,7 +14,7 @@ class Player {
       return;
     }
 
-    bet(calculateBet(game));
+    bet(bigBlindOrRaise(game));
     return;
   }
 
