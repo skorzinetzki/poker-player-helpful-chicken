@@ -4,11 +4,11 @@ PORT=3000 npm start &
 sleep 2
 
 curl -d 'action=bet_request&game_state={
-    "tournament_id":"550d1d68cd7bd10003000003",     
+    "tournament_id":"550d1d68cd7bd10003000003",
     "game_id":"550da1cb2d909006e90004b1",
     "round":0,
     "bet_index":0,
-    "small_blind": 10, 
+    "small_blind": 10,
     "current_buy_in": 320,
     "pot": 400,
     "minimum_raise": 240,
@@ -65,6 +65,6 @@ curl -d 'action=bet_request&game_state={
             "suit": "clubs"
         }
     ]
-  }' https://poker-player-js-ordogivett162883.codeanyapp.com/
+  }' http://localhost:3000/
 
 echo ""
