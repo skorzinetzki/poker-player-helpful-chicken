@@ -1,5 +1,5 @@
 module.exports = function calculateBet(game) {
-  return shouldBet(game) ? game.toRaiseByBlinds(1) : 0;
+  return shouldBet(game) ? game.toRaiseByBlinds(1) : game.bigBlind();
 };
 
 function shouldBet(gameState) {
