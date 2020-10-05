@@ -1,5 +1,5 @@
 const GameState = require("./src/GameState");
-const bigBlindOrRaise = require("./src/strategies/bigBlindOrRaise");
+const bigBlindOrRaise = require("./src/strategies/callOrRaise");
 
 class Player {
   static get VERSION() {

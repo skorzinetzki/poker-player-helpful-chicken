@@ -1,6 +1,6 @@
 const defaultGameState = require("../defaultGameState");
 const GameState = require("../GameState");
-const { bigBlindOrRaise } = require("./bigBlindOrRaise");
+const { bigBlindOrRaise } = require("./callOrRaise");
 
 function createGameStateWithCard(holeCards) {
   return new GameState({
