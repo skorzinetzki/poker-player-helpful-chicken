@@ -1,9 +1,9 @@
 const GameState = require("./src/GameState");
-const bigBlindOrRaise = require("./src/strategies/bigBlindOrRaise");
+const { bigBlindOrRaise } = require("./src/strategies/bigBlindOrRaise");
 
 class Player {
   static get VERSION() {
-    return "0.1";
+    return "0.3";
   }
 
   static betRequest(gameState, bet) {
