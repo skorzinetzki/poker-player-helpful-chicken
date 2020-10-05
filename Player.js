@@ -1,8 +1,5 @@
 const GameState = require("./src/GameState");
-const { callOrRaise } = require("./src/strategies/callOrRaise");
-const {
-  callOrRaiseBasedOnScore,
-} = require("./src/strategies/callOrRaiseBasedOnScore");
+const bigBlindOrRaise = require("./src/strategies/bigBlindOrRaise");
 
 class Player {
   static get VERSION() {
@@ -12,7 +9,13 @@ class Player {
   static betRequest(gameState, bet) {
     var game = new GameState(gameState);
 
-    bet(callOrRaiseBasedOnScore(game));
+    if (true) {
+      bet(game.bigBlind());
+      return;
+    }
+
+    bet(bigBlindOrRaise(game));
+    return;
   }
 
   static showdown(gameState) {}
