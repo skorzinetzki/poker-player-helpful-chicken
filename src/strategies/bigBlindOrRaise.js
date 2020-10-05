@@ -1,9 +1,12 @@
 function bigBlindOrRaise(game) {
-  return shouldBet(game) ? game.toRaiseByBlinds(1) : game.toCall();
-}
-
-function shouldBet(gameState) {
-  return gameState.me().score() >= 10;
+  const score = game.me().score();
+  if (score <= 5) {
+    return 0;
+  }
+  if (score < 10) {
+    return game.toCall();
+  }
+  return game.toRaiseByBlinds(1);
 }
 
 module.exports = { bigBlindOrRaise };
